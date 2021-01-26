@@ -77,6 +77,9 @@ Additional tests are accessible in https://github.com/GriffinScribe-LLC/clojure-
 All major functions/units are individually tested, and integration test exists at the end of that file.
 To run the unit tests, install leiningen (See installation section of readme). Then go to the root directory of the project, and run `lein test`.
 
+## API Documentation
+https://cljdoc.org/d/com.griffinscribe/clojure-aes/0.1.4/api/clojure-aes
+
 ## Resources used
 https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf
 
