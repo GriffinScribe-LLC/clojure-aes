@@ -5,8 +5,10 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]]
   :min-lein-version "2.0.0"
-  :main ^:skip-aot clojure-aes.main
+  :main clojure-aes.main
   :target-path "target/%s"
+  :source-paths ["src/clj" "src/cljc" "src/cljs"]
+  :resource-paths ["resources" "target/cljsbuild"]
   :repositories [["releases" {:url "https://repo.clojars.org"
                               :creds :gpg}]]
   :deploy-repositories {"releases" {:url "https://repo.clojars.org" :creds :gpg}}
