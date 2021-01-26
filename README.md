@@ -1,7 +1,7 @@
 # Clojure-aes 
 [![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes)
 
-Pure Clojure implementation of AES for 128, 192, and 256 bit keys based on FIPS Publication 197. Encryption and decryption methods currently support an input message of 16 bytes at a time.
+Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryption and decryption using 128, 192, and 256 bit keys based on FIPS Publication 197.
 
 ## Installation
 
@@ -54,6 +54,8 @@ Decryption:
         result "(gsce/decrypt key-256 message 256)]
         result)`
         
+              
+Version 0.1.4 currently supports an input message of 16 bytes (hex-formatted) at a time.
 
 Command line usage:
 `cd` into project root, and run the following.
