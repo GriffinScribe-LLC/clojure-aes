@@ -6,6 +6,7 @@ Pure Clojure implementation of AES for 128, 192, and 256 bit keys based on FIPS 
 
 Leiningen/Boot
 Add the following into :dependencies vector in your project.clj file: 
+
 [![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes)
 
 `[com.griffinscribe/clojure-aes "0.1.4"]`
