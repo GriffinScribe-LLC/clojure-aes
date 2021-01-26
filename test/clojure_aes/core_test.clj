@@ -159,15 +159,6 @@
       (is (= expected-key-256 (core/key-expansion c/initial-key-256 num-bits-256))
           "Expanded key with 256 bits is not accurate"))))
 
-#_(deftest addRoundKey-test
-  (testing "Test that the addRoundKey transformation accurately transforms the state (mix-state)"
-    (is (= c/round-state
-           (ark/addRoundKey
-            (utils/matrix-transposition c/mix-state)
-            c/initial-key-expanded-128
-            4))
-        "AddRoundKey function for 128 bits failed to transform the state accurately.")))
-
 (deftest addRoundKey-round0-test
   (testing "Test that the addRoundKey transformation accurately transforms the state on start 0"
     (let [secret-key [0x2b 0x7e 0x15 0x16
@@ -191,26 +182,25 @@
               0))
           "AddRoundKey function for 128 bits failed to transform the state accurately on the zeroeth round."))))
 
-
 (deftest cipher-test
   (testing "Integration test of cipher function, which encrypts the input by various calls to subBytes, shiftRows, mixColumns, and addRoundKey"
     (let [ num-bits-128 128
           input-128-2 [[0x32, 0x43, 0xf6, 0xa8]
-                     [0x88, 0x5a, 0x30, 0x8d]
-                     [0x31, 0x31, 0x98, 0xa2]
-                     [0xe0, 0x37, 0x07, 0x34] ]
+                       [0x88, 0x5a, 0x30, 0x8d]
+                       [0x31, 0x31, 0x98, 0xa2]
+                       [0xe0, 0x37, 0x07, 0x34] ]
           expected-128-2 [[0x39, 0x25, 0x84, 0x1d]
-                        [0x02, 0xdc, 0x09, 0xfb]
-                        [0xdc, 0x11, 0x85, 0x97]
+                          [0x02, 0xdc, 0x09, 0xfb]
+                          [0xdc, 0x11, 0x85, 0x97]
                           [0x19, 0x6a, 0x0b, 0x32]]
           key-2 [0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6,
                  0xab, 0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c]
           expanded-key-2 (core/key-expansion key-2 num-bits-128)
           
           plain-text [[0x00 0x11 0x22 0x33]
-                     [0x44 0x55 0x66 0x77]
-                     [0x88 0x99 0xaa 0xbb]
-                     [0xcc 0xdd 0xee 0xff]]
+                      [0x44 0x55 0x66 0x77]
+                      [0x88 0x99 0xaa 0xbb]
+                      [0xcc 0xdd 0xee 0xff]]
           
           key [0x00 0x01 0x02 0x03
                0x04 0x05 0x06 0x07
@@ -223,15 +213,15 @@
                     [0x70 0xb4 0xc5 0x5a]]]
       (is (= expected
              (cipher-core/cipher plain-text
-                          expanded-key
-                          num-bits-128
-                          key))
+                                 expanded-key
+                                 num-bits-128
+                                 key))
           "Input text was not encrypted per AES standard for 128 bits.")
       (is (= expected-128-2
              (cipher-core/cipher input-128-2
-                          expanded-key-2
-                          num-bits-128
-                          key-2))
+                                 expanded-key-2
+                                 num-bits-128
+                                 key-2))
           "Input text was not encrypted per AES standard for 128 bits."))))
 
 (deftest cipher-128-test
@@ -324,7 +314,7 @@
       (is (= expected (core/decrypt key-256 message 256))
           "Message with 256-bit key failed to decrypt correctly"))))
 
-;;; appendix c tests taken from https://cs465.byu.edu/static/pubs/fips-197.pdf
+;;; appendix c tests taken from https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf 
 (deftest cipher-128-test-appendix-c
   (testing "Test that aes algorithm encrypts message with 128-bit key correctly from appendix c"
     (let [message "00112233445566778899aabbccddeeff"

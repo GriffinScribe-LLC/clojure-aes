@@ -21,7 +21,7 @@ The first arg is the secret key. The second arg is the message to be encrypted o
 `-e` indicates that encryption will be used. Use `-d` for decryption.
 
 ## TESTS
-This algorithm passes all test cases in Appendix C of https://cs465.byu.edu/static/pubs/fips-197.pdf,
+This library passes all test cases in Appendix C of https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf,
 including encryption for 128, 192, and 256 bits, as well as decryption for keys of 128, 192 and 256 bits.
 
 Additional tests are accessible in `/clojure-aes/test/clojure_aes/core_test.clj`
