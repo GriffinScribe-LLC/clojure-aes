@@ -5,17 +5,21 @@ Pure Clojure implementation of AES for 128, 192, and 256 bit keys based on FIPS 
 ## Installation
 
 Leiningen/Boot
-[clojure-aes "0.1.2"]
+Add the following into :dependencies vector in your project.clj file: 
+`[clojure-aes "0.1.2"]`
+
 Clojure CLI/deps.edn
-clojure-aes/clojure-aes {:mvn/version "0.1.2"}
+`clojure-aes/clojure-aes {:mvn/version "0.1.2"}`
+
 Gradle
-compile 'clojure-aes:clojure-aes:0.1.2'
+`compile 'clojure-aes:clojure-aes:0.1.2'`
+
 Maven
-<dependency>
+`<dependency>
   <groupId>clojure-aes</groupId>
   <artifactId>clojure-aes</artifactId>
   <version>0.1.2</version>
-</dependency>
+</dependency>`
 
 Command-line access
 Clone the repo, and `cd` into the root directory of the project
