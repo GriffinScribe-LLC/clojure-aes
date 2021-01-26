@@ -9,8 +9,6 @@
   :target-path "target/%s"
   :repositories [["releases" {:url "https://repo.clojars.org"
                               :creds :gpg}]]
-  :deploy-repositories [["releases" :clojars]
-                        ["snapshots" :clojars]]
   :deploy-repositories {"releases" {:url "https://repo.clojars.org" :creds :gpg}}
   :deploy-branches ["main"]
   :scm {:name "git"
