@@ -60,11 +60,11 @@ Version 0.1.4 currently supports an input message of 16 bytes (hex-formatted) at
 Command line usage:
 `cd` into project root, and run the following.
 
-    $ java -jar clojure-aes-0.1.0-standalone.jar [args]
+    $ java -jar clojure-aes-0.1.4-standalone.jar [args]
 where the args passed in are the secret-key, the message, the key-length and a flag for encryption or decryption.
 Example:
 
-    $ java -jar target/uberjar/clojure-aes-0.1.0-standalone.jar 629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80 526b00c38662e0c58a49ce6ccc83fe9a 192 -e 
+    $ java -jar target/uberjar/clojure-aes-0.1.4-standalone.jar 629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80 526b00c38662e0c58a49ce6ccc83fe9a 192 -e 
 
 The first arg is the secret key. The second arg is the message to be encrypted or decrypted. Third arg is the key-length, and the final arg indicates whether encryption or decryption will be used.
 `-e` indicates that encryption will be used. Use `-d` for decryption.
