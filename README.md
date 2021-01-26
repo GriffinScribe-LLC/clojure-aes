@@ -3,6 +3,21 @@
 Pure Clojure implementation of AES for 128, 192, and 256 bit keys based on FIPS Publication 197. Encryption and decryption methods currently support an input message of 16 bytes at a time.
 
 ## Installation
+
+Leiningen/Boot
+[clojure-aes "0.1.2"]
+Clojure CLI/deps.edn
+clojure-aes/clojure-aes {:mvn/version "0.1.2"}
+Gradle
+compile 'clojure-aes:clojure-aes:0.1.2'
+Maven
+<dependency>
+  <groupId>clojure-aes</groupId>
+  <artifactId>clojure-aes</artifactId>
+  <version>0.1.2</version>
+</dependency>
+
+Command-line access
 Clone the repo, and `cd` into the root directory of the project
 
 If there is no jar file located at ./target/uberjar/clojure-aes-0.1.0-SNAPSHOT-standalone.jar,
