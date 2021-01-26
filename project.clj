@@ -1,4 +1,4 @@
-(defproject clojure-aes "0.1.0"
+(defproject clojure-aes "0.1.1"
   :description "Pure Clojure implementation of the Advanced Encryption Standard (AES). Supports encryption and decryption for 128, 192, and 256 bit keys."
   :url "https://www.griffinscribe.com"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"	
