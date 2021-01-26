@@ -7,6 +7,7 @@ Pure Clojure implementation of AES for 128, 192, and 256 bit keys based on FIPS 
 Leiningen/Boot
 Add the following into :dependencies vector in your project.clj file: 
 [![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes)
+
 `[com.griffinscribe/clojure-aes "0.1.4"]`
 
 
@@ -40,14 +41,17 @@ Encryption:
        result (gsce/encrypt key-256 message key-length)]
        result)`
           
+          
 Decryption:
+
  `(let [message "2ace987331c0d3e57479dd7037103028"
         key-256 "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
         key-length 256
         result "(gsce/decrypt key-256 message 256)]
         result)`
+        
 
-command line usage:
+Command line usage:
 `cd` into project root, and run the following.
 
     $ java -jar clojure-aes-0.1.0-standalone.jar [args]
