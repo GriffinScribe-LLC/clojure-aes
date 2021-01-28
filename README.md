@@ -1,5 +1,6 @@
 # Clojure-aes 
-[![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes)
+[![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes) 
+[![cljdoc badge](https://cljdoc.org/badge/com.griffinscribe/clojure-aes)](https://cljdoc.org/d/com.griffinscribe/clojure-aes/CURRENT)
 
 Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryption and decryption using 128, 192, and 256 bit keys based on FIPS Publication 197.
 
