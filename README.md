@@ -1,7 +1,7 @@
 # Clojure-aes 
 [![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes) 
 
-Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryption and decryption using 128, 192, and 256 bit keys based on FIPS Publication 197.
+Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryption and decryption using 128, 192, and 256 bit keys based on [FIPS Publication 197](https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf).
 
 ## Installation
 
