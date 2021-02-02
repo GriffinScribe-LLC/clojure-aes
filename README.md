@@ -51,7 +51,7 @@ Decryption:
  `(let [message "2ace987331c0d3e57479dd7037103028"
         key-256 "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
         key-length 256
-        result "(gsce/decrypt key-256 message 256)]
+        result (gsce/decrypt key-256 message 256)]
         result)`
         
               
@@ -70,14 +70,14 @@ The first arg is the secret key. The second arg is the message to be encrypted o
 `-e` indicates that encryption will be used. Use `-d` for decryption.
 
 
-
 ## TESTS
 This library passes all test cases in Appendix C of https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf,
 including encryption for 128, 192, and 256 bits, as well as decryption for keys of 128, 192 and 256 bits.
 
 Additional tests are accessible in https://github.com/GriffinScribe-LLC/clojure-aes/blob/main/test/clojure_aes/core_test.clj
 All major functions/units are individually tested, and integration test exists at the end of that file.
-To run the unit tests, install leiningen (See installation section of readme). Then go to the root directory of the project, and run `lein test`.
+To run the unit tests from the command-line, install leiningen (See installation section of readme). Then go to the root directory of the project, and run `lein test`.
+To run the tests in the REPL, start up a Clojure REPL in Emacs, navigate to the test file, load it via `ctrl-c ctrl-k` and use the Emacs cider test functionality to run the tests. Use the keystrokes `ctrl-c ctrl-t n` for all tests in the namespace; `ctrl-c ctrl-t t` to run a specific test. Documentation for cider is found at https://docs.cider.mx/cider/testing/running_tests.html
 
 ## API Documentation
 https://cljdoc.org/d/com.griffinscribe/clojure-aes/0.1.4/api/clojure-aes
