@@ -6,7 +6,8 @@ Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryp
 ## Installation
 
 Leiningen/Boot
-Add the following into :dependencies vector in your project.clj file: 
+
+Add the following into `:dependencies` in your project.clj file: 
 
 `[com.griffinscribe/clojure-aes "0.1.4"]`
 
