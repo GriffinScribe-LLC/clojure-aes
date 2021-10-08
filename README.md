@@ -40,20 +40,24 @@ dowload leiningen (https://github.com/technomancy/leiningen), run `lein uberjar`
 
 Encryption:
 
-`(let [message "1a57bbfeeefc417d203494788f3ba2c8"
-       key-256 "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
-       key-length 256
-       result (gsce/encrypt key-256 message key-length)]
-       result)`
+```
+(let [message    "1a57bbfeeefc417d203494788f3ba2c8"
+      key-256    "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
+      key-length 256
+      result     (gsce/encrypt key-256 message key-length)]
+  result)
+```
           
           
 Decryption:
 
- `(let [message "2ace987331c0d3e57479dd7037103028"
-        key-256 "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
-        key-length 256
-        result (gsce/decrypt key-256 message 256)]
-        result)`
+```
+(let [message    "2ace987331c0d3e57479dd7037103028"
+      key-256    "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
+      key-length 256
+      result     (gsce/decrypt key-256 message 256)]
+  result)
+```
         
               
 Version 0.1.4 currently supports an input message of 16 bytes (hex-formatted) at a time.
