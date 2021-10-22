@@ -32,7 +32,7 @@ Command-line access:
 
 Clone the repo, and `cd` into the root directory of the project
 
-If there is no jar file located at ./target/uberjar/clojure-aes-0.1.4-standalone.jar,
+If there is no jar file located at `./target/uberjar/clojure-aes-0.1.4-standalone.jar`,
 dowload leiningen (https://github.com/technomancy/leiningen), run `lein uberjar`  in the root directory of the project (same directory that the `project.clj` file is located in) to create a jar file. Then proceed with the below-mentioned `java` command
 
 ## Usage
