@@ -1,7 +1,7 @@
 # Clojure-aes 
 [![Clojars Project](https://img.shields.io/clojars/v/com.griffinscribe/clojure-aes.svg)](https://clojars.org/com.griffinscribe/clojure-aes) 
 
-Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryption and decryption using 128, 192, and 256 bit keys based on [FIPS Publication 197](https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf).
+Pure Clojure implementation of the Advanced Encryption Standard (AES) for encryption and decryption using 128, 192, and 256 bit keys based on the [NIST specification](https://csrc.nist.gov/csrc/media/publications/fips/197/final/documents/fips-197.pdf).
 
 ## Installation
 
@@ -41,22 +41,22 @@ dowload leiningen (https://github.com/technomancy/leiningen), run `lein uberjar`
 Encryption:
 
 ```
-(let [message    "1a57bbfeeefc417d203494788f3ba2c8"
-      key-256    "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
-      key-length 256
-      result     (gsce/encrypt key-256 message key-length)]
-  result)
+(let [message     "1a57bbfeeefc417d203494788f3ba2c8"
+      secret-key  "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
+      key-length  256
+      cipher-text (gsce/encrypt secret-key message key-length)]
+  cipher-text)
 ```
           
           
 Decryption:
 
 ```
-(let [message    "2ace987331c0d3e57479dd7037103028"
-      key-256    "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
-      key-length 256
-      result     (gsce/decrypt key-256 message 256)]
-  result)
+(let [cipher-text "2ace987331c0d3e57479dd7037103028"
+      secret-key  "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
+      key-length  256
+      message     (gsce/decrypt secret-key cipher-text key-length)]
+  message)
 ```
         
               
