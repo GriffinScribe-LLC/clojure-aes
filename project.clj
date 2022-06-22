@@ -7,7 +7,7 @@
   :min-lein-version "2.0.0"
   :main clojure-aes.main
   :target-path "target/%s"
-  :source-paths ["src/clj" "src/cljc" "src/cljs"]
+  :source-paths ["src"]
   :resource-paths ["resources" "target/cljsbuild"]
   :repositories [["releases" {:url "https://repo.clojars.org"
                               :creds :gpg}]]
