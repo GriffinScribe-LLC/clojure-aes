@@ -9,24 +9,32 @@ Leiningen/Boot
 
 Add the following into `:dependencies` in your project.clj file: 
 
-`[com.griffinscribe/clojure-aes "0.1.4"]`
+```clojure
+[com.griffinscribe/clojure-aes "0.1.4"]
+```
 
 
 Clojure CLI/deps.edn
 
-`com.griffinscribe/clojure-aes {:mvn/version "0.1.4"}`
+```clojure
+com.griffinscribe/clojure-aes {:mvn/version "0.1.4"}
+```
 
 Gradle
 
-`compile 'com.griffinscribe:clojure-aes:0.1.4'`
+```clojure
+compile 'com.griffinscribe:clojure-aes:0.1.4'
+```
 
 Maven
 
- `<dependency>
+ ```java
+ <dependency>
   <groupId>com.griffinscribe</groupId>
   <artifactId>clojure-aes</artifactId>
   <version>0.1.4</version>
-</dependency>`
+</dependency>
+```
 
 Command-line access:
 
@@ -36,26 +44,29 @@ If there is no jar file located at `./target/uberjar/clojure-aes-0.1.4-standalon
 dowload leiningen (https://github.com/technomancy/leiningen), run `lein uberjar`  in the root directory of the project (same directory that the `project.clj` file is located in) to create a jar file. Then proceed with the below-mentioned `java` command
 
 ## Usage
-` (:require [com.griffinscribe/clojure-aes.core :as gsce])`
+
+```clojure
+(:require [clojure-aes.core :as aes])
+```
 
 Encryption:
 
-```
+```clojure
 (let [message     "1a57bbfeeefc417d203494788f3ba2c8"
       secret-key  "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
       key-length  256
-      cipher-text (gsce/encrypt secret-key message key-length)]
+      cipher-text (aes/encrypt secret-key message key-length)]
   cipher-text)
 ```
           
           
 Decryption:
 
-```
+```clojure
 (let [cipher-text "2ace987331c0d3e57479dd7037103028"
       secret-key  "629cdd27509b3d2fe2adb7ec7ff0e6cf4a6c24f4c5ebbf80c38d25f8fc54c649"
       key-length  256
-      message     (gsce/decrypt secret-key cipher-text key-length)]
+      message     (aes/decrypt secret-key cipher-text key-length)]
   message)
 ```
         
