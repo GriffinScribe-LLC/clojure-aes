@@ -8,7 +8,7 @@
 
 (defn inv-cipher
   "Decrypts the passed in `cipher-text` a 4x4 byte array, using the designated secret-key, a byte array."
-  [cipher-text expanded-key num-bits secret-key]
+  [cipher-text expanded-key num-bits secret-key & [debug-print]]
   (let [merged-cipher-text  (apply str
                                    (flatten (utils/byte2-to-hex-string
                                              cipher-text)))
@@ -29,9 +29,10 @@
                                   (isb/inv-sub-bytes 0)
                                   (ark/addRoundKey expanded-key 0))]
     
-    (println "\nStarting decryption")
-    (println (str "Cipher TEXT:       " merged-cipher-text))
-    (println (str "KEY:           " merged-secret-key))
+    (when debug-print
+      (println "\nStarting decryption")
+      (println (str "Cipher TEXT:       " merged-cipher-text))
+      (println (str "KEY:           " merged-secret-key)))
     (utils/print-array @state "round start" 0)
     (reset! state (ark/addRoundKey
                    (utils/matrix-transposition @state)
@@ -40,10 +41,10 @@
     (reset! state (final-transformation))
     (utils/print-array @state "decryption finished" num-rounds)
     (utils/debug-aes num-rounds  "output" (utils/matrix-transposition @state))
-    (println "Cipher text  " merged-cipher-text " successfully decrypted as"
-             (apply str (flatten
-                         (utils/byte2-to-hex-string
-                          (utils/matrix-transposition @state)))))
-    (println "Decryption finished.")
-    
+    (when debug-print
+      (println "Cipher text  " merged-cipher-text " successfully decrypted as"
+               (apply str (flatten
+                           (utils/byte2-to-hex-string
+                            (utils/matrix-transposition @state)))))
+      (println "Decryption finished."))
     (utils/matrix-transposition @state)))

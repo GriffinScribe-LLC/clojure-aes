@@ -33,7 +33,7 @@
 (defn inv-sub-bytes
   "This transformation extracts each word from the State, and calculates the lookup for each byte within each word from inv-sbox"
   [[row1 row2 row3 row4] round-num]
-  (let [calculate-row (fn [row]
+  (let [calculate-row (fn -row-calcuate [row]
                         (into []
                               (for [word row]
                                 (bit-and 0xff
@@ -45,5 +45,5 @@
         new-row4 (calculate-row row4)
         new-state [new-row1 new-row2 new-row3 new-row4]]
     (utils/print-array new-state "after subBytes" round-num)
-                                        ; (utils/debug-aes round-num "s_box after subBytes:  " new-state)
+    (utils/debug-aes round-num "s_box after subBytes:  " new-state)
     new-state))

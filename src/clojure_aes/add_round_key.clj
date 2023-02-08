@@ -23,6 +23,6 @@
                        (xor-cols state-col round-key-col))))]
     (utils/debug-aes round-num "k_sch "
                      (utils/matrix-transposition round-key))
-                                        ;(utils/print-array round-key "round key value" round-num)
-                                        ;(utils/print-array new-state "state after addRoundKey:" round-num)
+    (utils/print-array round-key "round key value" round-num)
+    (utils/print-array new-state "state after addRoundKey:" round-num)
     new-state))

@@ -43,6 +43,6 @@
         new-row3 (calculate-row row3)
         new-row4 (calculate-row row4)
         new-state [new-row1 new-row2 new-row3 new-row4]]
-                                        ;(utils/print-array new-state "after subBytes" round-num)
+    (utils/print-array new-state "after subBytes" round-num)
     (utils/debug-aes round-num "s_box " (utils/matrix-transposition new-state))
     new-state))

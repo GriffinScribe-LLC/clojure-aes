@@ -36,7 +36,7 @@
                      [row2-b row2-c row2-d row2-a]
                      [row3-c row3-d row3-a row3-b]
                      [row4-d row4-a row4-b row4-c]]]
-                                        ;(utils/print-array transformed "after shift-rows" round-num)
+    (utils/print-array transformed "after shift-rows" round-num)
     (utils/debug-aes round-num "s_row " (utils/matrix-transposition transformed))
     transformed))
 
