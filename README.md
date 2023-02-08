@@ -125,7 +125,7 @@ pages 151-161 by Wade Trappe and Lawrence C. Washington.
 
 ## License
 
-Copyright © 2021-2023 GriffinScribe, LLC
+Copyright © 2021-2023 GriffinScribe, LLC. All Rights Reserved.
 
 Distributed under the Eclipse Public License, the same as Clojure.
 
