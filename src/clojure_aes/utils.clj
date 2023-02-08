@@ -1,5 +1,7 @@
 (ns clojure-aes.utils)
 
+(def debug-print (atom false))
+
 (defn hexify
   "Convert byte sequence to hex string."
   [coll]
@@ -57,14 +59,17 @@
 (defn print-array
   "Print debug info for each round: hex array format"
   [state round-type round-num]
-  (println "round: " round-num "stage: " round-type )
+  (when @debug-print
+    (println "round: " round-num "stage: " round-type ))
   (doseq [row state]
-    (prn (byte-to-hex-string row))))
+    (when @debug-print
+      (prn (byte-to-hex-string row)))))
 
 (defn debug-aes
   "Print debug info for each round: single string hex-format."
   [round-num round-type state]
   (let [byte-string (byte2-to-hex-string state)]
-    (prn (str "round[" round-num "]."
-              round-type "   "
-              (apply str (flatten byte-string))))))
+    (when @debug-print
+      (prn (str "round[" round-num "]."
+                round-type "   "
+                (apply str (flatten byte-string)))))))

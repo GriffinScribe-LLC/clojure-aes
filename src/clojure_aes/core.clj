@@ -47,7 +47,7 @@
 
 (defn encrypt
   "Separates the incoming `bit-key` and `message` into byte arrays, and encrypts the `message` using the `bit-key`."
-  [bit-key message bits]
+  [bit-key message bits & [verbose?]]
   (let [secret-key (utils/break-message-to-bytes bit-key)
         plain-text (utils/break-message-to-bytes message)
         split-plain-text [(vec (take 4 plain-text))
@@ -61,11 +61,12 @@
                   split-plain-text
                   expanded-key
                   bits
-                  secret-key))))))
+                  secret-key
+                  verbose?))))))
 
 (defn decrypt
   "Separates the incoming `bit-key` and `message` into byte arrays, and decrypts the `message` using the `bit-key`."
-  [bit-key message bits]
+  [bit-key message bits & [verbose?]]
   (let [secret-key (utils/break-message-to-bytes bit-key)
         cipher-text (utils/break-message-to-bytes message)
         split-cipher-text [(vec (take 4 cipher-text))
@@ -78,20 +79,6 @@
                  (icc/inv-cipher split-cipher-text
                                  expanded-key
                                  bits
-                                 secret-key))))))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                 secret-key
+                                 verbose?))))))
 

@@ -29,6 +29,6 @@
                 (generate-column 2)
                 (generate-column 3)]
         transposed-state (utils/matrix-transposition result)]
-                                        ;(utils/print-array transposed-state "after mixColumns:" round-num)
+    (utils/print-array transposed-state "after mixColumns:" round-num)
     (utils/debug-aes round-num "m_col " (utils/matrix-transposition transposed-state))
     transposed-state))
